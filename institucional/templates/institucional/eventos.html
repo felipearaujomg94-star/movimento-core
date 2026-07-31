@@ -1,0 +1,19 @@
+{% extends 'institucional/base.html' %}
+
+{% block title %}Movimento - Eventos{% endblock %}
+
+{% block content %}
+    <h1>Próximos Eventos</h1>
+    <ul>
+        {% for evento in eventos %}
+            <li>
+                <strong>{{ evento.data|date:"d/m/Y" }}</strong>
+                {% if evento.horario %} às {{ evento.horario|time:"H:i" }}{% endif %}
+                - {{ evento.atividade }}
+                {% if evento.local %} ({{ evento.local }}){% endif %}
+            </li>
+        {% empty %}
+            <li>Nenhum evento cadastrado no momento.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

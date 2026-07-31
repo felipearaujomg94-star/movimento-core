@@ -7,13 +7,14 @@
 </head>
 <body>
     <header>
-            <nav>
+        <nav>
             <h2>Movimento</h2>
             <a href="{% url 'home' %}">Início</a>
             <a href="{% url 'sobre' %}">Sobre</a>
+            <a href="{% url 'eventos' %}">Eventos</a>
         </nav>
-    </header> 
-   
+    </header>
+
     <main>
         {% block content %}
         {% endblock %}
