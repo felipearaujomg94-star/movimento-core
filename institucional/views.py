@@ -1,24 +1,4 @@
 from django.shortcuts import render
-
-
-def home(request):
-    return render(request, 'institucional/home.html')
-
-def sobre(request):
-    return render(request, 'institucional/sobre.html')
-
-from django.shortcuts import render
-
-
-def home(request):
-    return render(request, 'institucional/home.html')
-
-
-def sobre(request):
-    return render(request, 'institucional/sobre.html')
-
-
-from django.shortcuts import render
 from django.utils import timezone
 from .models import Evento
 
