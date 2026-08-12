@@ -4,7 +4,12 @@ from .models import Evento
 
 
 def home(request):
-    return render(request, 'institucional/home.html')
+    hoje = timezone.now().date()
+    proximos_eventos = Evento.objects.filter(data__gte=hoje)[:3]
+
+    return render(request, 'institucional/home.html', {
+        'proximos_eventos': proximos_eventos
+    })
 
 
 def sobre(request):
