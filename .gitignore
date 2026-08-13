@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 .env
 *.ics
+PROGRESSO.md
+eventos_local.json
+eventos_local_utf8.json
+_local.json
