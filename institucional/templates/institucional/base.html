@@ -1,27 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="{% static 'institucional/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Movimento{% endblock %}</title>
+
+
 </head>
+
 <body>
-    <header>
+
+<header>
+    <div class="container">
         <nav>
             <h2>Movimento</h2>
-            <a href="{% url 'home' %}">Início</a>
-            <a href="{% url 'sobre' %}">Sobre</a>
-            <a href="{% url 'eventos' %}">Eventos</a>
-        </nav>
-    </header>
 
+            <div class="links">
+                <a href="{% url 'home' %}">Início</a>
+                <a href="{% url 'sobre' %}">Sobre</a>
+                <a href="{% url 'eventos' %}">Eventos</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
     <main>
         {% block content %}
         {% endblock %}
     </main>
+</div>
 
-    <footer>
+<footer>
+    <div class="container">
         <p>&copy; 2026 Movimento. Todos os direitos reservados.</p>
-    </footer>
+    </div>
+</footer>
+
 </body>
 </html>
