@@ -4,16 +4,39 @@
 
 {% block content %}
     <h1>Próximos Eventos</h1>
-    <ul>
+
+    <div class="eventos-grid">
         {% for evento in eventos %}
-            <li>
-                <strong>{{ evento.data|date:"d/m/Y" }}</strong>
-                {% if evento.horario %} às {{ evento.horario|time:"H:i" }}{% endif %}
-                - {{ evento.atividade }}
-                {% if evento.local %} ({{ evento.local }}){% endif %}
-            </li>
+
+            <div class="evento-card">
+
+                <div class="evento-data">
+                    {{ evento.data|date:"d/m/Y" }}
+                </div>
+
+                <h2 class="evento-titulo">
+                    {{ evento.atividade }}
+                </h2>
+
+                {% if evento.horario %}
+                    <p class="evento-info">
+                        🕒 {{ evento.horario|time:"H:i" }}
+                    </p>
+                {% endif %}
+
+                {% if evento.local %}
+                    <p class="evento-info">
+                        📍 {{ evento.local }}
+                    </p>
+                {% endif %}
+
+            </div>
+
         {% empty %}
-            <li>Nenhum evento cadastrado no momento.</li>
+
+            <p>Nenhum evento cadastrado no momento.</p>
+
         {% endfor %}
-    </ul>
+    </div>
+
 {% endblock %}
