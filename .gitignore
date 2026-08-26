@@ -9,3 +9,7 @@ eventos_local.json
 eventos_local_utf8.json
 _local.json
 backup_*.json
+# Backups locais com dados do banco
+backup_render_*.json
+eventos.json
+eventos_corrigidos.json
