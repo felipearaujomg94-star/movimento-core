@@ -5,7 +5,8 @@ from django.db import models
 class Usuario(AbstractUser):
     class Cargo(models.TextChoices):
         COORDENACAO = "coordenacao", "Coordenação"
-        SECRETARIA = "secretaria", "Secretaria"
+        PADRE = "padre", "Padre"
+        SECRETARIA = "secretaria", "Secretária"
         LITURGIA = "liturgia", "Liturgia"
         TESOURARIA = "tesouraria", "Tesouraria"
         MARKETING = "marketing", "Marketing"
